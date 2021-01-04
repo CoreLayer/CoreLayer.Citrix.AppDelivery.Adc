@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="9.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLayer.Citrix.AppDelivery.Adc.NitroApi\CoreLayer.Citrix.AppDelivery.Adc.NitroApi.csproj" />
+    <ProjectReference Include="..\CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces\CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces.csproj" />
+  </ItemGroup>
+
+</Project>
