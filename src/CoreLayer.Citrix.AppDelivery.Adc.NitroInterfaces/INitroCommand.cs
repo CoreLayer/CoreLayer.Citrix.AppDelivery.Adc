@@ -7,8 +7,8 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces
 {
     public interface INitroCommand<T>
     {
-        INitroClient ServiceClient { get; }
-        INitroRequest Data { get; }
+        INitroClient NitroClient { get; }
+        INitroRequest NitroRequest { get; }
         Task<ValidationResult> ValidateAsync(CancellationToken cancellationToken);
         Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken);
         Task<T> GetResponse();

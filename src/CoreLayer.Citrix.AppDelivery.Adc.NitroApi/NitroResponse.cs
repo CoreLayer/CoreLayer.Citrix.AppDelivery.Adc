@@ -2,6 +2,9 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
+    /// <summary>
+    /// TODO NitroResponse
+    /// </summary>
     public abstract class NitroResponse : INitroResponse
     {
         public int ErrorCode { get; set; }

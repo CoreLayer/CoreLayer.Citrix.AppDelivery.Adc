@@ -1,27 +1,28 @@
 ﻿namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Login
 {
-    public class NitroLoginRequestData : INitroLoginRequestData
+    /// <summary>
+    /// TODO NitroLoginRequestData
+    /// </summary>
+    public class NitroLoginRequestData
     {
-        private readonly string _username;
-        private readonly string _password;
-        private readonly int _timeout;
-
         public NitroLoginRequestData(string username, string password)
         {
-            _username = username;
-            _password = password;
-            _timeout = 600;
+            Username = username;
+            Password = password;
+            Timeout = 600;
         }
         public NitroLoginRequestData(string username, string password, int timeout)
         {
-            _username = username;
-            _password = password;
-            _timeout = timeout;
+            Username = username;
+            Password = password;
+            Timeout = timeout;
         }
 
-        public string Username => _username;
-        public string Password => _password;
-        public int Timeout => _timeout;
+        public string Username { get; }
+
+        public string Password { get; }
+
+        public int Timeout { get; }
 
         public override string ToString()
         {

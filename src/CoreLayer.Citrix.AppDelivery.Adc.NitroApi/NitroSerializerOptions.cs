@@ -2,6 +2,9 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
+    /// <summary>
+    /// TODO NitroSerializerOptions
+    /// </summary>
     public static class NitroSerializerOptions
     {
         public static JsonSerializerOptions JsonSerializerOptions =>

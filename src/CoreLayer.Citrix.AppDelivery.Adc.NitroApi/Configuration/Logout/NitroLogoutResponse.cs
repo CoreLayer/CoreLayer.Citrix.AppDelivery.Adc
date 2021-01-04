@@ -1,8 +1,7 @@
 ﻿namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Logout
 {
-    public class NitroLogoutResponse : NitroResponse
-
-    {
-
-    }
+    /// <summary>
+    /// TODO NitroLogoutResponse
+    /// </summary>
+    public class NitroLogoutResponse : NitroResponse { }
 }

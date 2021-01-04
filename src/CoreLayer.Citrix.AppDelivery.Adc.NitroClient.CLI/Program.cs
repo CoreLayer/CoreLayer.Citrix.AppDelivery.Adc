@@ -1,17 +1,15 @@
-﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Ns.NsVersion;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands;
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsVersion;
 using System;
-using System.IO;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
 {
-    class Program
+    internal class Program
     {
-        static async System.Threading.Tasks.Task Main()
+        private static async System.Threading.Tasks.Task Main()
         {
             Console.Write("Address: ");
-            var baseAddress = Console.ReadLine();
+            var hostname = Console.ReadLine();
 
             Console.Write("Username: ");
             var username = Console.ReadLine();
@@ -21,20 +19,25 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
 
             var settings = new NitroClientSettings
             {
-                BaseAddress = new Uri(baseAddress),
+                Hostname = hostname,
                 Username = username,
                 Password = password,
                 AuthenticationMethod = NitroClientAuthenticationMethod.Automatic,
+                UseSsl = false,
+                ValidateCertificate = NitroClientFactoryCertificateValidationOption.Disabled,
                 Timeout = 300
             };
 
-            var nitroClient = new NitroClient(settings, NitroClientFactoryCertificateValidationOption.Disabled);
+            var nitroClient = new NitroClient(settings);
 
 
             var command = NitroCommandFactory.Create<NsVersionGetCommand>(nitroClient);
             var response = await command.GetResponse();
 
             Console.WriteLine(response.NsVersion.Version);
+            Console.WriteLine(response.NsVersion.Release);
+            Console.WriteLine(response.NsVersion.Build);
+            Console.WriteLine(response.NsVersion.ReleaseDate);
 
 
             Console.ReadLine();

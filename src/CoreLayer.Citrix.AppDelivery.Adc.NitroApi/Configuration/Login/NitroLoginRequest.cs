@@ -3,6 +3,9 @@ using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Login
 {
+    /// <summary>
+    /// TODO NitroLoginRequest
+    /// </summary>
     public class NitroLoginRequest : NitroRequest
     {
         public override HttpMethod Method => HttpMethod.Post;

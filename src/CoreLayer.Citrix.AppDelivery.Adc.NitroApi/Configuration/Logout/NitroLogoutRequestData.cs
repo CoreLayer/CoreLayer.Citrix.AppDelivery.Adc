@@ -1,7 +1,10 @@
 ﻿namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Logout
 {
-    public class NitroLogoutRequestData : INitroLogoutRequestData
+    /// <summary>
+    /// TODO NitroLogoutRequestData
+    /// </summary>
+    public class NitroLogoutRequestData
     {
-        public string Data => string.Empty;
+        public static string Data => string.Empty;
     }
 }

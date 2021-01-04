@@ -13,8 +13,4 @@
     <ProjectReference Include="..\CoreLayer.Citrix.AppDelivery.Adc.NitroModel\CoreLayer.Citrix.AppDelivery.Adc.NitroModel.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Configuration\Ns\NsLicense\" />
-  </ItemGroup>
-
 </Project>

@@ -6,8 +6,15 @@ using System.Threading.Tasks;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
+    /// <summary>
+    /// TODO NitroRequestBulkBindingsOptions
+    /// </summary>
     public class NitroRequestBulkBindingsOptions : NitroRequestOptions
     {
+        /// <summary>
+        /// TODO GenerateQueryParameterList
+        /// </summary>
+        /// <returns></returns>
         protected override List<string> GenerateQueryParameterList()
         {
             List<string> queryParameters = new List<string>();

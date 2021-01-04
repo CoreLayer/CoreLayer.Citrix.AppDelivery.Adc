@@ -2,6 +2,9 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Login
 {
+    /// <summary>
+    /// TODO NitroLoginRequestDataRoot
+    /// </summary>
     public class NitroLoginRequestDataRoot : INitroRequestDataRoot
     {
         public NitroLoginRequestDataRoot()
@@ -12,6 +15,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Login
         {
             Login = data;
         }
-        public INitroLoginRequestData Login { get; set; }
+        public NitroLoginRequestData Login { get; set; }
     }
 }

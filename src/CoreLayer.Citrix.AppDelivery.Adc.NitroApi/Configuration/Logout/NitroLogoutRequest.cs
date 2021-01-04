@@ -3,6 +3,9 @@ using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Logout
 {
+    /// <summary>
+    /// TODO NitroLogoutRequest
+    /// </summary>
     public class NitroLogoutRequest : NitroRequest
     {
         public override HttpMethod Method => HttpMethod.Post;

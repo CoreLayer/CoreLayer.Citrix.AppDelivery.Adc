@@ -9,12 +9,22 @@ using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
 {
+    /// <summary>
+    /// TODO NitroClient
+    /// </summary>
     public class NitroClient : INitroClient
     {
         private const string NitroTokenCookie = "NITRO_AUTH_TOKEN=";
         private readonly HttpClient _httpClient;
         private readonly NitroClientSettings _nitroSettings;
 
+
+
+        /// <summary>
+        /// TODO NitroClient
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="httpClient"></param>
         public NitroClient(NitroClientSettings settings, HttpClient httpClient)
         {
             _nitroSettings = settings;
@@ -23,9 +33,20 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
             ConfigureHttpClient();
         }
 
-        public NitroClient(NitroClientSettings settings, NitroClientFactoryCertificateValidationOption nitroClientFactoryCertificateValidationOption)
-            : this(settings, NitroClientFactory.Generate(nitroClientFactoryCertificateValidationOption)) { }
 
+
+        /// <summary>
+        /// TODO NitroClient
+        /// </summary>
+        /// <param name="settings"></param>
+        /// <param name="nitroClientFactoryCertificateValidationOption"></param>
+        public NitroClient(NitroClientSettings settings) : this(settings, NitroClientFactory.Generate(settings.ValidateCertificate)) { }
+
+
+
+        /// <summary>
+        /// TODO ConfigureHttpClient
+        /// </summary>
         private void ConfigureHttpClient()
         {
             _httpClient.BaseAddress = _nitroSettings.BaseAddress;
@@ -35,6 +56,12 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
             task.Wait();
         }
 
+
+
+        /// <summary>
+        /// TODO ConfigureAutomaticLogin
+        /// </summary>
+        /// <returns></returns>
         private async Task ConfigureAutomaticLogin()
         {
             switch (_nitroSettings.AuthenticationMethod)
@@ -52,17 +79,34 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
             }
         }
 
+
+
+        /// <summary>
+        /// TODO ConfigureAuthenticationHeaders
+        /// </summary>
         private void ConfigureAuthenticationHeaders()
         {
             _httpClient.DefaultRequestHeaders.Add("X-NITRO-USER", _nitroSettings.Username);
             _httpClient.DefaultRequestHeaders.Add("X-NITRO-PASS", _nitroSettings.Password);
         }
 
+
+
+        /// <summary>
+        /// TODO ConfigureAuthenticationCookieHeader
+        /// </summary>
+        /// <param name="token"></param>
         private void ConfigureAuthenticationCookieHeader(string token)
         {
             _httpClient.DefaultRequestHeaders.Add("Cookie", NitroTokenCookie + token);
         }
 
+
+
+        /// <summary>
+        /// TODO IsLoggedIn
+        /// </summary>
+        /// <returns></returns>
         private bool IsLoggedIn()
         {
             while (true)
@@ -83,9 +127,16 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
             }
         }
 
+
+
+        /// <summary>
+        /// TODO Login
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task Login(CancellationToken cancellationToken)
         {
-            var loginRequestData = new NitroLoginRequestData(_nitroSettings.Username, _nitroSettings.Password);
+            var loginRequestData = new NitroLoginRequestData(_nitroSettings.Username, _nitroSettings.Password, _nitroSettings.Timeout);
             var loginRequestConfiguration = new NitroLoginRequest(new NitroLoginRequestDataRoot(loginRequestData));
 
             var response = await _httpClient.SendAsync(
@@ -106,6 +157,13 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
             ConfigureAuthenticationCookieHeader(content.SessionId);
         }
 
+
+
+        /// <summary>
+        /// TODO Logout
+        /// </summary>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public async Task Logout(CancellationToken cancellationToken)
         {
             if (!IsLoggedIn())
@@ -121,7 +179,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
         }
 
         /// <summary>
-        /// 
+        /// TODO SendAsync
         /// </summary>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>

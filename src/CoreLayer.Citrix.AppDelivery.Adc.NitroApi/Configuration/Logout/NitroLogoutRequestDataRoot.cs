@@ -2,6 +2,9 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Logout
 {
+    /// <summary>
+    /// TODO NitroLogoutRequestDataRoot
+    /// </summary>
     public class NitroLogoutRequestDataRoot : INitroRequestDataRoot
     {
         public NitroLogoutRequestDataRoot()
@@ -9,6 +12,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Logout
             Logout = new NitroLogoutRequestData();
         }
 
-        public INitroLogoutRequestData Logout { get; set; }
+        public NitroLogoutRequestData Logout { get; set; }
     }
 }

@@ -3,6 +3,9 @@ using System.Text.Encodings.Web;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
+    /// <summary>
+    /// TODO NitroRequestArgumentOptions
+    /// </summary>
     public class NitroRequestArgumentOptions : NitroRequestOptions
     {
         public Dictionary<string, string> Arguments { get; set; } = new Dictionary<string, string>();
@@ -13,6 +16,13 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
             return base.ToString() + ArgumentsToString();
         }
 
+
+
+
+        /// <summary>
+        /// TODO ArgumentsToString
+        /// </summary>
+        /// <returns></returns>
         private string ArgumentsToString()
         {
             string returnString = "";

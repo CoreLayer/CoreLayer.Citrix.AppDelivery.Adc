@@ -3,10 +3,18 @@ using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsVersion
 {
-    public class NsVersionGetCommand : NitroCommand<NsVersionGetResponse>
+    /// <summary>
+    /// TODO NsVersionGetCommand
+    /// </summary>
+    public class NsVersionGetCommand : NitroCommand<NsLicenseGetResponse>
     {
-        public NsVersionGetCommand(INitroClient serviceClient, INitroRequest requestConfiguration) :
-            base(serviceClient, requestConfiguration)
+        /// <summary>
+        /// TODO NsVersionGetCommand
+        /// </summary>
+        /// <param name="nitroClient"></param>
+        /// <param name="nitroRequest"></param>
+        public NsVersionGetCommand(INitroClient nitroClient, INitroRequest nitroRequest) :
+            base(nitroClient, nitroRequest)
         {
 
         }
