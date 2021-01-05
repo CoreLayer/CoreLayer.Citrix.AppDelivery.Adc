@@ -19,4 +19,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CoreLayer.Citrix.AppDelivery.Adc.NitroCommon\CoreLayer.Citrix.AppDelivery.Adc.NitroCommon.csproj" />
+    <ProjectReference Include="..\..\src\CoreLayer.Citrix.AppDelivery.Adc.NitroModel\CoreLayer.Citrix.AppDelivery.Adc.NitroModel.csproj" />
+  </ItemGroup>
+
 </Project>

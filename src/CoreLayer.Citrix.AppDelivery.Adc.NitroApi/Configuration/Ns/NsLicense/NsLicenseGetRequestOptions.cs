@@ -3,8 +3,5 @@
     /// <summary>
     /// TODO NsLicenseGetRequestOptions
     /// </summary>
-    public class NsLicenseGetRequestOptions : NitroRequestOptions
-    {
-
-    }
+    public class NsLicenseGetRequestOptions : NitroRequestOptions { }
 }

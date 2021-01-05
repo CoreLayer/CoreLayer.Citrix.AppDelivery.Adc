@@ -16,7 +16,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
         public virtual HttpMethod Method => HttpMethod.Get;
         public MediaTypeHeaderValue ContentType => new MediaTypeHeaderValue("application/json");
         public virtual string ResourcePath => "/nitro/v1";
-        public virtual INitroRequestOptions Options { get; set; } = new NitroRequestOptionsDefault();
+        public virtual INitroRequestOptions Options { get; set; } = new NitroDefaultRequestOptions();
         // ReSharper disable once UnassignedGetOnlyAutoProperty
         public virtual INitroRequestDataRoot DataRoot { get; }
 

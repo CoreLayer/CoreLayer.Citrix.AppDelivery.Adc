@@ -1,6 +1,11 @@
 ﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsVersion;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsLicense;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroCommon;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns;
 using System;
+using System.Text.Json;
+using System.Threading;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsVersion;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
 {
@@ -31,15 +36,24 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
             var nitroClient = new NitroClient(settings);
 
 
-            var command = NitroCommandFactory.Create<NsVersionGetCommand>(nitroClient);
-            var response = await command.GetResponse();
+            var nsLicenseGetCommand = NitroCommandFactory.Create<NsLicenseGetCommand>(nitroClient);
+            var nsLicenseGetResponse = await nsLicenseGetCommand.GetResponse();
+            Console.WriteLine();
+            Console.WriteLine(nsLicenseGetResponse.NsLicenseResponse.ModelId);
+            Console.WriteLine(nsLicenseGetResponse.NsLicenseResponse.LicensingMode);
+            Console.WriteLine(nsLicenseGetResponse.NsLicenseResponse.IsStandardEditionLicense);
+            Console.WriteLine(nsLicenseGetResponse.NsLicenseResponse.IsAdvancedEditionLicense);
+            Console.WriteLine(nsLicenseGetResponse.NsLicenseResponse.IsPremiumLicense);
+            Console.WriteLine(nsLicenseGetResponse.NsLicenseResponse.IsSimpleGatewayLicense);
+            Console.WriteLine(nsLicenseGetResponse.NsLicenseResponse.IsSecureWebGatewayLicense);
 
-            Console.WriteLine(response.NsVersion.Version);
-            Console.WriteLine(response.NsVersion.Release);
-            Console.WriteLine(response.NsVersion.Build);
-            Console.WriteLine(response.NsVersion.ReleaseDate);
+            Console.WriteLine();
 
+            var nsVersionGetCommand = NitroCommandFactory.Create<NsVersionGetCommand>(nitroClient);
+            var nsVersionGetResponse = await nsVersionGetCommand.GetResponse();
+            Console.WriteLine(nsVersionGetResponse.NsVersionResponse.Version);
 
+            await nitroClient.Logout(new CancellationToken());
             Console.ReadLine();
         }
     }

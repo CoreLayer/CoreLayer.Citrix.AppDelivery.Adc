@@ -1,4 +1,5 @@
-﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroCommon;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
 using System.IO;
 using System.Net.Http;
 using System.Text.Json;

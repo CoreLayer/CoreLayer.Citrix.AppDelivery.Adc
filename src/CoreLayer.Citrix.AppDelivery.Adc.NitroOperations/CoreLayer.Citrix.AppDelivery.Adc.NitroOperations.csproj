@@ -4,4 +4,11 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLayer.Citrix.AppDelivery.Adc.NitroApi\CoreLayer.Citrix.AppDelivery.Adc.NitroApi.csproj" />
+    <ProjectReference Include="..\CoreLayer.Citrix.AppDelivery.Adc.NitroClient\CoreLayer.Citrix.AppDelivery.Adc.NitroClient.csproj" />
+    <ProjectReference Include="..\CoreLayer.Citrix.AppDelivery.Adc.NitroCommands\CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.csproj" />
+    <ProjectReference Include="..\CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces\CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces.csproj" />
+  </ItemGroup>
+
 </Project>

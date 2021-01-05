@@ -13,11 +13,24 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Login
         public override INitroRequestOptions Options => new NitroLoginRequestOptions();
         public override INitroRequestDataRoot DataRoot { get; } = new NitroLoginRequestDataRoot();
 
+
+
+
+        /// <summary>
+        /// TODO NitroLoginRequest constructor
+        /// </summary>
         public NitroLoginRequest()
         {
             DataRoot = new NitroLoginRequestDataRoot();
         }
 
+
+
+        
+        /// <summary>
+        /// TODO NitroLoginRequest constructor
+        /// </summary>
+        /// <param name="dataRoot"></param>
         public NitroLoginRequest(NitroLoginRequestDataRoot dataRoot)
         {
             DataRoot = dataRoot;

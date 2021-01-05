@@ -1,11 +1,13 @@
-﻿using System;
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Login;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroCommon;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+using System;
 using System.Net.Http;
 using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroApi;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Login;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Logout;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Login;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
 {
@@ -169,7 +171,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
             if (!IsLoggedIn())
                 return;
 
-            var logoutRequestConfiguration = new NitroLoginRequest();
+            var logoutRequestConfiguration = new NitroLogoutRequest();
             var response = await _httpClient.SendAsync(
                 await logoutRequestConfiguration.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
                 cancellationToken).ConfigureAwait(false);

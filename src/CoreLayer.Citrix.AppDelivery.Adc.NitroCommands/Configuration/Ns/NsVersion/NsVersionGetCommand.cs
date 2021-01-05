@@ -9,14 +9,10 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsVers
     public class NsVersionGetCommand : NitroCommand<NsLicenseGetResponse>
     {
         /// <summary>
-        /// TODO NsVersionGetCommand
+        /// TODO NsVersionGetCommand constructor
         /// </summary>
         /// <param name="nitroClient"></param>
         /// <param name="nitroRequest"></param>
-        public NsVersionGetCommand(INitroClient nitroClient, INitroRequest nitroRequest) :
-            base(nitroClient, nitroRequest)
-        {
-
-        }
+        public NsVersionGetCommand(INitroClient nitroClient, INitroRequest nitroRequest) : base(nitroClient, nitroRequest) { }
     }
 }
