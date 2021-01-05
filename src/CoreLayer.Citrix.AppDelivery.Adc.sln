@@ -25,7 +25,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLayer.Citrix.AppDeliver
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI", "CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI\CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI.csproj", "{7F0A7D24-ED1A-434A-912B-15FB8E9B37AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer.Citrix.AppDelivery.Adc.NitroCommon", "CoreLayer.Citrix.AppDelivery.Adc.NitroCommon\CoreLayer.Citrix.AppDelivery.Adc.NitroCommon.csproj", "{F1121FA5-76E4-4FF1-96A2-9FC1CC37C5AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreLayer.Citrix.AppDelivery.Adc.NitroCommon", "CoreLayer.Citrix.AppDelivery.Adc.NitroCommon\CoreLayer.Citrix.AppDelivery.Adc.NitroCommon.csproj", "{F1121FA5-76E4-4FF1-96A2-9FC1CC37C5AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer.Citrix.AppDelivery.Adc.NitroApiTests", "..\tests\CoreLayer.Citrix.AppDelivery.Adc.NitroApiTests\CoreLayer.Citrix.AppDelivery.Adc.NitroApiTests.csproj", "{DE926BF7-ED95-40C5-BD48-1FE1B4F23FC8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer.Citrix.AppDelivery.Adc.NitroCommandsTests", "..\tests\CoreLayer.Citrix.AppDelivery.Adc.NitroCommandsTests\CoreLayer.Citrix.AppDelivery.Adc.NitroCommandsTests.csproj", "{C2D23E62-158E-4E1D-B4FA-8051E13E0975}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreLayer.Citrix.AppDelivery.Adc.NitroCommonTests", "..\tests\CoreLayer.Citrix.AppDelivery.Adc.NitroCommonTests\CoreLayer.Citrix.AppDelivery.Adc.NitroCommonTests.csproj", "{3C427654-31CE-4C59-B890-922DD69AAC70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -73,6 +79,18 @@ Global
 		{F1121FA5-76E4-4FF1-96A2-9FC1CC37C5AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1121FA5-76E4-4FF1-96A2-9FC1CC37C5AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1121FA5-76E4-4FF1-96A2-9FC1CC37C5AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE926BF7-ED95-40C5-BD48-1FE1B4F23FC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE926BF7-ED95-40C5-BD48-1FE1B4F23FC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE926BF7-ED95-40C5-BD48-1FE1B4F23FC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE926BF7-ED95-40C5-BD48-1FE1B4F23FC8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D23E62-158E-4E1D-B4FA-8051E13E0975}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D23E62-158E-4E1D-B4FA-8051E13E0975}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D23E62-158E-4E1D-B4FA-8051E13E0975}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D23E62-158E-4E1D-B4FA-8051E13E0975}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C427654-31CE-4C59-B890-922DD69AAC70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C427654-31CE-4C59-B890-922DD69AAC70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C427654-31CE-4C59-B890-922DD69AAC70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C427654-31CE-4C59-B890-922DD69AAC70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -88,6 +106,9 @@ Global
 		{B8C27EE4-3E33-4A46-BFA4-5D8A5DCFA5D8} = {327C132B-6B73-4377-B7B6-FC53E625F437}
 		{7F0A7D24-ED1A-434A-912B-15FB8E9B37AC} = {327C132B-6B73-4377-B7B6-FC53E625F437}
 		{F1121FA5-76E4-4FF1-96A2-9FC1CC37C5AB} = {327C132B-6B73-4377-B7B6-FC53E625F437}
+		{DE926BF7-ED95-40C5-BD48-1FE1B4F23FC8} = {3CC1BF9E-18E5-4356-882D-2EB560C50938}
+		{C2D23E62-158E-4E1D-B4FA-8051E13E0975} = {3CC1BF9E-18E5-4356-882D-2EB560C50938}
+		{3C427654-31CE-4C59-B890-922DD69AAC70} = {3CC1BF9E-18E5-4356-882D-2EB560C50938}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5BEA033D-7E02-4763-A9B0-974333005D76}
