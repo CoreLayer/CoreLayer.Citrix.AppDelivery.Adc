@@ -2,9 +2,6 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemBackup
 {
-    /// <summary>
-    /// TODO SystemBackupResponseData
-    /// </summary>
     public class SystemBackupResponseData
     {
         [JsonPropertyName("filename")]

@@ -1,5 +1,4 @@
-﻿using System;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Logout;
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Logout;
 using System.Collections;
 using System.Collections.Generic;
 

@@ -3,9 +3,6 @@ using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Ns.NsLicense
 {
-    /// <summary>
-    /// TODO NsLicenseGetRequest
-    /// </summary>
     public class NsLicenseGetRequest : NitroRequest
     {
         public override HttpMethod Method => HttpMethod.Get;

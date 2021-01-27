@@ -2,11 +2,13 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemBackup
 {
-    /// <summary>
-    /// TODO SystemBackupCreateRequestData
-    /// </summary>
     public class SystemBackupCreateRequestData : INitroRequestData
     {
+        public string Level { get; }
+        public string Filename { get; set; } = string.Empty;
+        public string Comment { get; set; } = string.Empty;
+
+
         public SystemBackupCreateRequestData(string level)
         {
             Level = level;
@@ -21,10 +23,5 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.Syste
         {
             Comment = comment;
         }
-
-        public string Level { get; }
-        public string Filename { get; set; } = string.Empty;
-        public string Comment { get; set; } = string.Empty;
-        
     }
 }

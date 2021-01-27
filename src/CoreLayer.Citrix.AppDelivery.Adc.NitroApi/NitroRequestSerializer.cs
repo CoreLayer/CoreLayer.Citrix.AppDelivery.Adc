@@ -8,9 +8,6 @@ using System.Threading.Tasks;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
-    /// <summary>
-    /// TODO NitroRequestSerializer
-    /// </summary>
     public static class NitroRequestSerializer
     {
         private static async Task SerializeRequestData(Stream dataStream, INitroRequestDataRoot requestDataRoot)
@@ -25,25 +22,9 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
             dataStream.Seek(0, SeekOrigin.Begin);
         }
 
-
-
-
-        /// <summary>
-        /// TODO StreamContent
-        /// </summary>
-        /// <param name="dataStream"></param>
-        /// <returns></returns>
         private static StreamContent StreamContent(Stream dataStream) =>
             new StreamContent(new StreamReader(dataStream).BaseStream);
 
-
-
-
-        /// <summary>
-        /// TODO GenerateHttpRequestMessageAsync
-        /// </summary>
-        /// <param name="requestConfiguration"></param>
-        /// <returns></returns>
         public static async Task<HttpRequestMessage> GenerateHttpRequestMessageAsync(INitroRequest requestConfiguration)
         {
             var dataStream = new MemoryStream();

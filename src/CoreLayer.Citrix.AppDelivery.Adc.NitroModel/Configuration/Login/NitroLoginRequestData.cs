@@ -1,8 +1,5 @@
 ﻿namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Login
 {
-    /// <summary>
-    /// TODO NitroLoginRequestData
-    /// </summary>
     public class NitroLoginRequestData
     {
         public NitroLoginRequestData(string username, string password)

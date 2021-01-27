@@ -4,16 +4,8 @@ using System.Security.Authentication;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
 {
-    /// <summary>
-    /// TODO NitroClientFactory
-    /// </summary>
     public static class NitroClientFactory
     {
-        /// <summary>
-        /// TODO Generate
-        /// </summary>
-        /// <param name="certificateValidation"></param>
-        /// <returns></returns>
         public static HttpClient Generate(NitroClientFactoryCertificateValidationOption certificateValidation)
         {
             var httpClient = certificateValidation == NitroClientFactoryCertificateValidationOption.Enabled
@@ -23,13 +15,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
             return httpClient;
         }
 
-
-
-
-        /// <summary>
-        /// TODO GetInSecureHttpMessageHandler
-        /// </summary>
-        /// <returns></returns>
         private static HttpClientHandler GetInSecureHttpMessageHandler()
         {
             return new HttpClientHandler
@@ -41,13 +26,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
             };
         }
 
-
-
-
-        /// <summary>
-        /// TODO GetSecureHttpMessageHandler
-        /// </summary>
-        /// <returns></returns>
         private static HttpClientHandler GetSecureHttpMessageHandler()
         {
             return new HttpClientHandler

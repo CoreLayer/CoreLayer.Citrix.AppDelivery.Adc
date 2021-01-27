@@ -2,9 +2,6 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
 {
-    /// <summary>
-    /// TODO NitroClientSettings
-    /// </summary>
     public class NitroClientSettings {
         public string Username { get; set; }
         public string Password { get; set; }

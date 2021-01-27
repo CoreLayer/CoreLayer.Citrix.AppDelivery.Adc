@@ -1,8 +1,7 @@
 ﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroCommon;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns.NsVersion;
 using System.Collections.Generic;
 using System.Text.Json;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns.NsVersion;
 using Xunit;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModelTests.Configuration.Ns

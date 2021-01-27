@@ -2,8 +2,5 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Ns.NsLicense
 {
-    /// <summary>
-    /// TODO NsLicenseGetRequestDataRoot
-    /// </summary>
-    public class NsLicenseGetRequestDataRoot : INitroRequestDataRoot { }
+    internal class NsLicenseGetRequestDataRoot : INitroRequestDataRoot { }
 }

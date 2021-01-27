@@ -6,9 +6,6 @@ using System.Text.Encodings.Web;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
-    /// <summary>
-    /// TODO NitroRequestOptions
-    /// </summary>
     public abstract class NitroRequestOptions : INitroRequestOptions
     {
         public string ResourceName { get; set; } = "";
@@ -18,15 +15,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
         public bool Count { get; set; } = false;
 
 
-
-
-        /// <summary>
-        /// TODO NitroRequestOptions
-        /// </summary>
         protected NitroRequestOptions() { }
-
-
-
 
         public override string ToString()
         {
@@ -35,13 +24,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
             return AddResourceNameToRequestPath() + AddQueryParametersToRequestQuery(queryParameters);
         }
 
-
-
-
-        /// <summary>
-        /// TODO GenerateQueryParameterList
-        /// </summary>
-        /// <returns></returns>
         protected virtual List<string> GenerateQueryParameterList()
         {
             List<string> queryParameters = new List<string>();
@@ -63,13 +45,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
             return queryParameters;
         }
 
-
-
-
-        /// <summary>
-        /// TODO AddResourceNameToRequestPath
-        /// </summary>
-        /// <returns></returns>
         private string AddResourceNameToRequestPath()
         {
             if (!ResourceName.Equals(String.Empty))
@@ -79,14 +54,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
             return ResourceName;
         }
 
-
-
-
-        /// <summary>
-        /// TODO AddQueryParametersToRequestQuery
-        /// </summary>
-        /// <param name="queryParameters"></param>
-        /// <returns></returns>
         protected static string AddQueryParametersToRequestQuery(ICollection<string> queryParameters)
         {
             return queryParameters.Count > 0
@@ -95,12 +62,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
         }
 
 
-
-
-        /// <summary>
-        /// TODO ResourceFilterToString
-        /// </summary>
-        /// <returns></returns>
         protected string ResourceFilterToString()
         {
             return ResourceFilter.Count > 0
@@ -108,16 +69,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
                 : string.Empty;
         }
 
-
-
-
-        /// <summary>
-        /// TODO ConvertDictionaryParametersToString
-        /// </summary>
-        /// <param name="dictionary"></param>
-        /// <param name="prefix"></param>
-        /// <param name="separator"></param>
-        /// <returns></returns>
         private static string ConvertDictionaryParametersToString(IDictionary<string, string> dictionary, string prefix, string separator)
         {
             var result = new StringBuilder();
@@ -142,13 +93,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
             return result.ToString().TrimEnd(',');
         }
 
-
-
-
-        /// <summary>
-        /// TODO PropertyFilterToString
-        /// </summary>
-        /// <returns></returns>
         protected string PropertyFilterToString()
         {
             return PropertyFilter.Count > 0
@@ -156,16 +100,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
                 : string.Empty;
         }
 
-
-
-
-        /// <summary>
-        /// TODO ConvertListParametersToString
-        /// </summary>
-        /// <param name="list"></param>
-        /// <param name="prefix"></param>
-        /// <param name="separator"></param>
-        /// <returns></returns>
         private static string ConvertListParametersToString(ICollection<string> list, string prefix, string separator)
         {
             var result = new StringBuilder();

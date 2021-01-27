@@ -1,7 +1,6 @@
-﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns;
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns.NsLicense;
 using System.Collections;
 using System.Collections.Generic;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns.NsLicense;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModelTests.Configuration.Ns
 {

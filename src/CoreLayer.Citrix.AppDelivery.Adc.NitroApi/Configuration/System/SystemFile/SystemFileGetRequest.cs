@@ -1,11 +1,8 @@
-﻿using System.Net.Http;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemFile
 {
-    /// <summary>
-    /// TODO SystemFileGetRequest
-    /// </summary>
     public class SystemFileGetRequest : NitroRequest
     {
         public override HttpMethod Method => HttpMethod.Get;

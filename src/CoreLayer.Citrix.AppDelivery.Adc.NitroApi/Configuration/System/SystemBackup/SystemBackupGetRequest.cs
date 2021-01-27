@@ -3,10 +3,6 @@ using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemBackup
 {
-    /// <summary>
-    /// TODO SystemBackupGetRequest
-    /// TODO SystemBackupGetRequest Tests
-    /// </summary>
     public class SystemBackupGetRequest : NitroRequest
     {
         public override HttpMethod Method => HttpMethod.Get;
@@ -15,10 +11,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemB
         public override INitroRequestDataRoot DataRoot => new SystemBackupGetRequestDataRoot();
 
 
-
-        /// <summary>
-        /// TODO SystemBackupGetRequest constructor
-        /// </summary>
         public SystemBackupGetRequest() { }
     }
 }

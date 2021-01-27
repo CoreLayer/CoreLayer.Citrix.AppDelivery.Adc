@@ -1,12 +1,9 @@
-﻿using System.Net.Http;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemFile;
+using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemFile
 {
-    /// <summary>
-    /// TODO SystemFileAddRequest
-    /// TODO SystemFileAddRequest Tests
-    /// </summary>
     public class SystemFileAddRequest : NitroRequest
     {
         public override HttpMethod Method => HttpMethod.Post;
@@ -14,14 +11,20 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemF
         public override INitroRequestOptions Options => new SystemFileAddRequestOptions();
         public override INitroRequestDataRoot DataRoot { get; }
 
-        // TODO Check for INitroRequestDataRoot in all Requests
-        /// <summary>
-        /// TODO SystemFileAddRequest
-        /// </summary>
-        /// <param name="dataRoot"></param>
-        public SystemFileAddRequest(SystemFileAddRequestDataRoot dataRoot)
+        // public SystemFileAddRequest(SystemFileAddRequestDataRoot dataRoot)
+        // {
+        //     DataRoot = dataRoot;
+        // }
+
+        public SystemFileAddRequest(SystemFileAddRequestData systemFileAddRequestData)
         {
-            DataRoot = dataRoot;
+            DataRoot = new SystemFileAddRequestDataRoot(systemFileAddRequestData);
+        }
+
+        public SystemFileAddRequest(SystemFileAddRequestData[] systemFileAddRequestData)
+        {
+            DataRoot = new SystemFileAddRequestDataRoot(systemFileAddRequestData);
         }
     }
 }
+/// TODO CLEANUP

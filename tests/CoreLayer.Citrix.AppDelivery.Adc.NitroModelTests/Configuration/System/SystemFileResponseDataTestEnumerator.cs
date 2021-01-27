@@ -1,8 +1,6 @@
-﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System;
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemFile;
 using System.Collections;
 using System.Collections.Generic;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemBackup;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemFile;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModelTests.Configuration.System
 {

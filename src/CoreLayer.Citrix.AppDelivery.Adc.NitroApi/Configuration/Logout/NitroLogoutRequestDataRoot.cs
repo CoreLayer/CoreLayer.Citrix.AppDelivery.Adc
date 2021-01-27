@@ -3,22 +3,14 @@ using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Logout;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Logout
 {
-    /// <summary>
-    /// TODO NitroLogoutRequestDataRoot
-    /// </summary>
-    public class NitroLogoutRequestDataRoot : INitroRequestDataRoot
+    internal class NitroLogoutRequestDataRoot : INitroRequestDataRoot
     {
-        /// <summary>
-        /// TODO NitroLogoutRequestDataRoot constructor
-        /// </summary>
+        public NitroLogoutRequestData Logout { get; set; }
+
+
         public NitroLogoutRequestDataRoot()
         {
             Logout = new NitroLogoutRequestData();
         }
-
-
-
-
-        public NitroLogoutRequestData Logout { get; set; }
     }
 }

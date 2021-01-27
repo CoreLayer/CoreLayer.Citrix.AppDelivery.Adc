@@ -1,11 +1,8 @@
-﻿using System.Net.Http;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemFile
 {
-    /// <summary>
-    /// TODO SystemFileRemoveRequest
-    /// </summary>
     public class SystemFileRemoveRequest : NitroRequest
     {
         public override HttpMethod Method => HttpMethod.Delete;

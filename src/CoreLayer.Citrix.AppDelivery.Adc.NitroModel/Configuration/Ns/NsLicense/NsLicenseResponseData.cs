@@ -1,10 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns.NsLicense
-{
-    /// <summary>
-    /// TODO NsLicenseResponseData
-    /// </summary>
+{ 
     public class NsLicenseResponseData
     {
         [JsonPropertyName("wl")]

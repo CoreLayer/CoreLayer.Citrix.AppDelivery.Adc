@@ -12,17 +12,8 @@ using System.Threading.Tasks;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroOperations
 {
-    /// <summary>
-    /// TODO SystemBackupOperations
-    /// </summary>
     public class SystemBackupOperations
     {
-        /// <summary>
-        /// TODO GetAsync
-        /// </summary>
-        /// <param name="nitroClient"></param>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
         public static async Task<SystemBackupGetResponse> GetAsync(INitroClient nitroClient, string fileName)
         {
             var systemBackupGetCommand = NitroCommandFactory.Create<SystemBackupGetCommand>(nitroClient,
@@ -34,14 +25,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroOperations
             return await systemBackupGetCommand.GetResponse();
         }
 
-
-
-
-        /// <summary>
-        /// TODO GetAllAsync
-        /// </summary>
-        /// <param name="nitroClient"></param>
-        /// <returns></returns>
         public static async Task<SystemBackupGetResponse> GetAllAsync(INitroClient nitroClient)
         {
             var systemBackupGetCommand = NitroCommandFactory.Create<SystemBackupGetCommand>(nitroClient);
@@ -49,16 +32,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroOperations
             return await systemBackupGetCommand.GetResponse();
         }
 
-
-
-
-        /// <summary>
-        /// TODO CreateAsync
-        /// </summary>
-        /// <param name="nitroClient"></param>
-        /// <param name="fileName"></param>
-        /// <param name="level"></param>
-        /// <returns></returns>
         public static async Task<SystemBackupCreateResponse> CreateAsync(INitroClient nitroClient, string fileName, string level = "full")
         {
             var systemBackupCreateCommand = NitroCommandFactory.Create<SystemBackupCreateCommand>(
@@ -71,15 +44,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroOperations
             return await systemBackupCreateCommand.GetResponse();
         }
 
-
-
-
-        /// <summary>
-        /// TODO DeleteAsync
-        /// </summary>
-        /// <param name="nitroClient"></param>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
         public static async Task<SystemBackupDeleteResponse> DeleteAsync(INitroClient nitroClient, string fileName)
         {
             var systemBackupDeleteCommand = NitroCommandFactory.Create<SystemBackupDeleteCommand>(
@@ -90,15 +54,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroOperations
             return await systemBackupDeleteCommand.GetResponse();
         }
 
-
-
-
-        /// <summary>
-        /// TODO DownloadAsBase64Async
-        /// </summary>
-        /// <param name="nitroClient"></param>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
         public static async Task<SystemFileResponseData> DownloadAsBase64Async(INitroClient nitroClient, string fileName)
         {
             var systemFileGetCommand = NitroCommandFactory.Create<SystemFileGetCommand>(

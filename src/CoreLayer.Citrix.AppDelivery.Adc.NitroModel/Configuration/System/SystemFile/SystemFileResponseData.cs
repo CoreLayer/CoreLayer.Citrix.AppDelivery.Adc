@@ -1,10 +1,7 @@
 ﻿using System.Text.Json.Serialization;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemFile
-{
-    /// <summary>
-    /// TODO SystemFileResponseData
-    /// </summary>
+{ 
     public class SystemFileResponseData
     {
         [JsonPropertyName("filename")]

@@ -1,42 +1,36 @@
 ﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemBackup;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemBackup
 {
-    /// <summary>
-    /// TODO SystemBackupCreateRequestDataRoot
-    /// </summary>
-    public class SystemBackupCreateRequestDataRoot : INitroRequestDataRoot
+    internal class SystemBackupCreateRequestDataRoot : INitroRequestDataRoot
     {
-        /// <summary>
-        /// TODO SystemBackupCreateRequestDataRoot constructor
-        /// </summary>
+        // public dynamic[] SystemBackup { get; }
+        public SystemBackupCreateRequestData[] SystemBackup;
+
         public SystemBackupCreateRequestDataRoot() { }
 
+        // public SystemBackupCreateRequestDataRoot(dynamic data)
+        // {
+        //     SystemBackup = new[] { data };
+        // }
+        //
+        // public SystemBackupCreateRequestDataRoot(dynamic[] data)
+        // {
+        //     SystemBackup = data;
+        // }
 
-
-
-        /// <summary>
-        /// TODO SystemBackupCreateRequestDataRoot constructor
-        /// </summary>
-        public SystemBackupCreateRequestDataRoot(dynamic data)
+        public SystemBackupCreateRequestDataRoot(SystemBackupCreateRequestData systemBackupCreateRequestData)
         {
-            SystemBackup = new[] { data };
+            SystemBackup = new[] { systemBackupCreateRequestData };
+        }
+
+        public SystemBackupCreateRequestDataRoot(SystemBackupCreateRequestData[] systemBackupCreateRequestDatas)
+        {
+            SystemBackup = systemBackupCreateRequestDatas;
         }
 
 
-
-
-        /// <summary>
-        /// TODO SystemBackupCreateRequestDataRoot constructor
-        /// </summary>
-        public SystemBackupCreateRequestDataRoot(dynamic[] data)
-        {
-            SystemBackup = data;
-        }
-
-
-
-
-        public dynamic[] SystemBackup { get; }
     }
 }
+/// TODO CLEANUP

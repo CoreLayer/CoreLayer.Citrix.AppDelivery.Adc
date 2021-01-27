@@ -8,9 +8,6 @@ using System.Threading.Tasks;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
-    /// <summary>
-    /// TODO NitroRequest
-    /// </summary>
     public class NitroRequest : INitroRequest
     {
         public virtual HttpMethod Method => HttpMethod.Get;
@@ -20,21 +17,10 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
         // ReSharper disable once UnassignedGetOnlyAutoProperty
         public virtual INitroRequestDataRoot DataRoot { get; }
 
-
-
-
-        /// <summary>
-        /// TODO NitroRequest
-        /// </summary>
+        
         protected NitroRequest() { }
 
 
-
-
-        /// <summary>
-        /// TODO ValidateAsync
-        /// </summary>
-        /// <returns></returns>
         public async Task<ValidationResult> ValidateAsync()
         {
             // Create Generic Type Instance based on current instance
@@ -63,13 +49,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
             return await result.ConfigureAwait(false);
         }
 
-
-
-
-        /// <summary>
-        /// TODO GenerateHttpRequestMessageAsync
-        /// </summary>
-        /// <returns></returns>
+        
         public async Task<HttpRequestMessage> GenerateHttpRequestMessageAsync()
         {
             return await NitroRequestSerializer.GenerateHttpRequestMessageAsync(this)

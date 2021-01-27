@@ -3,9 +3,6 @@ using System.Text.Json.Serialization;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns.NsVersion
 {
-    /// <summary>
-    /// TODO NsVersionResponseData
-    /// </summary>
     public class NsVersionResponseData
     {
         [JsonPropertyName("installedversion")]

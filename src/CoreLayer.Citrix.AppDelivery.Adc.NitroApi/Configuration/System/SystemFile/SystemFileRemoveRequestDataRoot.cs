@@ -2,8 +2,5 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemFile
 {
-    /// <summary>
-    /// TODO SystemFileRemoveRequestDataRoot
-    /// </summary>
     public class SystemFileRemoveRequestDataRoot : INitroRequestDataRoot { }
 }

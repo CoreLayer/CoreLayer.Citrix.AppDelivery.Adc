@@ -1,7 +1,6 @@
-﻿using System.Collections;
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns.NsVersion;
+using System.Collections;
 using System.Collections.Generic;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns.NsVersion;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModelTests.Configuration.Ns
 {

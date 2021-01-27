@@ -3,9 +3,6 @@ using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Ns.NsVersion
 {
-    /// <summary>
-    /// TODO NsVersionGetRequest
-    /// </summary>
     public class NsVersionGetRequest : NitroRequest
     {
         public override HttpMethod Method => HttpMethod.Get;

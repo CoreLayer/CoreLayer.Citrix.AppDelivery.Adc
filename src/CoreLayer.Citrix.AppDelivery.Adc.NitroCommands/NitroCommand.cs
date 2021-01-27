@@ -10,25 +10,14 @@ using System.Threading.Tasks;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroCommands
 {
-    /// <summary>
-    /// TODO NitroCommand
-    /// </summary>
-    /// <typeparam name="T"></typeparam>
     public abstract class NitroCommand<T> : INitroCommand<T>
     {
-        /// <summary>
-        /// 
-        /// </summary>
+        public INitroClient NitroClient { get; }
+        public INitroRequest NitroRequest { get; }
+
+        
         protected NitroCommand() { }
 
-
-
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="nitroClient"></param>
-        /// <param name="nitroRequest"></param>
         protected NitroCommand(INitroClient nitroClient, INitroRequest nitroRequest)
         {
             NitroClient = nitroClient;
@@ -36,19 +25,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroCommands
         }
 
 
-
-
-        public INitroClient NitroClient { get; }
-
-        public INitroRequest NitroRequest { get; }
-
-
-        /// <summary>
-        /// TODO ValidateAsync
-        /// </summary>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public async Task<ValidationResult> ValidateAsync(CancellationToken cancellationToken)
         {
             var validationResult = await NitroRequest.ValidateAsync().ConfigureAwait(false);
@@ -65,17 +41,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroCommands
             return validationResult;
         }
 
-
-
-
-        /// <summary>
-        /// TODO ExecuteAsync
-        /// </summary>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentNullException">The request is null.</exception>
-        /// <exception cref="InvalidOperationException">The request message was already sent by the HttpClient instance.</exception>
-        /// <exception cref="HttpRequestException">The request failed due to an underlying issue such as network connectivity, DNS failure, server certificate validation or timeout</exception>
         public async Task<HttpResponseMessage> ExecuteAsync(CancellationToken cancellationToken)
         {
 
@@ -85,15 +50,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroCommands
             return await task.ConfigureAwait(false);
         }
 
-
-
-
-        /// <summary>
-        /// TODO ExecuteAsync
-        /// </summary>
-        /// <param name="validateCommand"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
         public async Task<HttpResponseMessage> ExecuteAsync(bool validateCommand, CancellationToken cancellationToken)
         {
 
@@ -102,10 +58,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroCommands
 
             return await ExecuteAsync(cancellationToken).ConfigureAwait(false);
         }
-
-
-
-
+        
         /// <summary>
         /// TODO GetResponse
         /// </summary>

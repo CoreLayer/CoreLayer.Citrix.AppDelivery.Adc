@@ -3,9 +3,6 @@ using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemBackup
 {
-    /// <summary>
-    /// TODO SystemBackupDeleteRequest
-    /// </summary>
     public class SystemBackupDeleteRequest : NitroRequest
     {
         public override HttpMethod Method => HttpMethod.Delete;
@@ -14,10 +11,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemB
         public override INitroRequestDataRoot DataRoot => new SystemBackupDeleteRequestDataRoot();
 
 
-
-        /// <summary>
-        /// TODO SystemBackupDeleteRequest constructor
-        /// </summary>
         public SystemBackupDeleteRequest() { }
     }
 }
