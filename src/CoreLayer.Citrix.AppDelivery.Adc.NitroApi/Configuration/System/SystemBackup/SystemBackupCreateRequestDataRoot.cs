@@ -5,32 +5,19 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemB
 {
     internal class SystemBackupCreateRequestDataRoot : INitroRequestDataRoot
     {
-        // public dynamic[] SystemBackup { get; }
-        public SystemBackupCreateRequestData[] SystemBackup;
+        public SystemBackupCreateRequestData[] SystemBackup { get; }
+
 
         public SystemBackupCreateRequestDataRoot() { }
-
-        // public SystemBackupCreateRequestDataRoot(dynamic data)
-        // {
-        //     SystemBackup = new[] { data };
-        // }
-        //
-        // public SystemBackupCreateRequestDataRoot(dynamic[] data)
-        // {
-        //     SystemBackup = data;
-        // }
-
+        
         public SystemBackupCreateRequestDataRoot(SystemBackupCreateRequestData systemBackupCreateRequestData)
         {
             SystemBackup = new[] { systemBackupCreateRequestData };
         }
-
+        
         public SystemBackupCreateRequestDataRoot(SystemBackupCreateRequestData[] systemBackupCreateRequestDatas)
         {
             SystemBackup = systemBackupCreateRequestDatas;
         }
-
-
     }
 }
-/// TODO CLEANUP

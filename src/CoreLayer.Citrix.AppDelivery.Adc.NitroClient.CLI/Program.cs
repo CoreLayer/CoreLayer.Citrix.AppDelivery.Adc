@@ -1,11 +1,9 @@
 ﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsLicense;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroCommon;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.Ns;
-using System;
-using System.Text.Json;
-using System.Threading;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsVersion;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroOperations;
+using System;
+using System.Threading;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
 {
@@ -53,8 +51,10 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
             var nsVersionGetResponse = await nsVersionGetCommand.GetResponse();
             Console.WriteLine(nsVersionGetResponse.NsVersionResponse.Version);
 
+
             await nitroClient.Logout(new CancellationToken());
             Console.ReadLine();
         }
     }
 }
+;

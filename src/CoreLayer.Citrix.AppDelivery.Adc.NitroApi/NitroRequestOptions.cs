@@ -8,11 +8,11 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
     public abstract class NitroRequestOptions : INitroRequestOptions
     {
-        public string ResourceName { get; set; } = "";
-        public Dictionary<string, string> ResourceFilter { get; set; } = new Dictionary<string, string>();
-        public List<string> PropertyFilter { get; set; } = new List<string>();
-        public string Action { get; set; } = string.Empty; // TODO - implement action query parameter
-        public bool Count { get; set; } = false;
+        public virtual string ResourceName { get; set; } = "";
+        public virtual Dictionary<string, string> ResourceFilter { get; set; } = new Dictionary<string, string>();
+        public virtual List<string> PropertyFilter { get; set; } = new List<string>();
+        public virtual string Action { get; set; } = string.Empty; // TODO - implement action query parameter
+        public virtual bool Count { get; set; } = false;
 
 
         protected NitroRequestOptions() { }

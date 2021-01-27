@@ -25,20 +25,20 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
         private static StreamContent StreamContent(Stream dataStream) =>
             new StreamContent(new StreamReader(dataStream).BaseStream);
 
-        public static async Task<HttpRequestMessage> GenerateHttpRequestMessageAsync(INitroRequest requestConfiguration)
+        public static async Task<HttpRequestMessage> GenerateHttpRequestMessageAsync(INitroRequest request)
         {
             var dataStream = new MemoryStream();
-            await SerializeRequestData(dataStream, requestConfiguration.DataRoot).ConfigureAwait(false);
+            await SerializeRequestData(dataStream, request.DataRoot).ConfigureAwait(false);
 
-            var request = new HttpRequestMessage(
-                requestConfiguration.Method,
-                requestConfiguration.ResourcePath + requestConfiguration.Options.ToString())
+            var httpRequestMessage = new HttpRequestMessage(
+                request.Method,
+                request.ResourcePath + request.Options.ToString())
             {
                 Content = StreamContent(dataStream)
             };
-            request.Content.Headers.ContentType = requestConfiguration.ContentType;
+            httpRequestMessage.Content.Headers.ContentType = request.ContentType;
 
-            return request;
+            return httpRequestMessage;
         }
     }
 }
