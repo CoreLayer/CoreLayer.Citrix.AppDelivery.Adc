@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>corelayer-adc-cli</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CoreLayer.Citrix.AppDelivery.Adc.NitroClient\CoreLayer.Citrix.AppDelivery.Adc.NitroClient.csproj" />
+    <ProjectReference Include="..\CoreLayer.Citrix.AppDelivery.Adc.NitroCommands\CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.csproj" />
+    <ProjectReference Include="..\CoreLayer.Citrix.AppDelivery.Adc.NitroOperations\CoreLayer.Citrix.AppDelivery.Adc.NitroOperations.csproj" />
+  </ItemGroup>
+
+</Project>

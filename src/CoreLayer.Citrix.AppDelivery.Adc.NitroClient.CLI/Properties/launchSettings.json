@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -348,3 +348,12 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+
+
+# Ignore thumbnails created by Operating Systems
+Thumbs.db
+*.DS_Store
+
+
+.idea
