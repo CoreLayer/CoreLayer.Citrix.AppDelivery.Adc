@@ -17,14 +17,19 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 
         protected NitroRequestOptions() { }
 
+        protected NitroRequestOptions(string resourceName)
+        {
+            ResourceName = resourceName;
+        }
+
         public override string ToString()
         {
-            var queryParameters = GenerateQueryParameterList();
+            var queryParameters = GetQueryParameterList();
 
             return AddResourceNameToRequestPath() + AddQueryParametersToRequestQuery(queryParameters);
         }
 
-        protected virtual List<string> GenerateQueryParameterList()
+        protected virtual List<string> GetQueryParameterList()
         {
             List<string> queryParameters = new List<string>();
 

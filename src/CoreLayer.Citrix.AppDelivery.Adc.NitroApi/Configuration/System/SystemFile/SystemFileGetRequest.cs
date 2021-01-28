@@ -7,8 +7,8 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemF
     {
         public override HttpMethod Method => HttpMethod.Get;
         public override string ResourcePath => "/nitro/v1/config/systemfile";
-        public override INitroRequestDataRoot DataRoot => new SystemFileGetRequestDataRoot();
         public override INitroRequestOptions Options { get; set; } = new SystemFileGetRequestOptions();
+        public override INitroRequestDataRoot DataRoot => new SystemFileGetRequestDataRoot();
 
     }
 }

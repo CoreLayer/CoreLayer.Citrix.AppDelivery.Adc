@@ -18,10 +18,5 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemB
         {
             DataRoot = new SystemBackupCreateRequestDataRoot(systemBackupCreateRequestData);
         }
-
-        // public SystemBackupCreateRequest(INitroRequestDataRoot systemBackupCreateRequestDataRoot)
-        // {
-        //     DataRoot = systemBackupCreateRequestDataRoot;
-        // }
     }
 }

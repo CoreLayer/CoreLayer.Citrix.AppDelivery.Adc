@@ -50,9 +50,9 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
         }
 
         
-        public async Task<HttpRequestMessage> GenerateHttpRequestMessageAsync()
+        public async Task<HttpRequestMessage> GetHttpRequestMessageAsync()
         {
-            return await NitroRequestSerializer.GenerateHttpRequestMessageAsync(this)
+            return await NitroRequestSerializer.GetHttpRequestMessageAsync(this)
                 .ConfigureAwait(false);
         }
     }

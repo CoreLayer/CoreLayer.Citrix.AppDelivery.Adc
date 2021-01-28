@@ -1,6 +1,6 @@
 ﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
-using System.Net.Http;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemBackup;
+using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemBackup
 {
@@ -11,11 +11,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemB
         public override INitroRequestOptions Options => new SystemBackupAddRequestOptions();
         public override INitroRequestDataRoot DataRoot { get; }
 
-
-        // public SystemBackupAddRequest(SystemBackupAddRequestDataRoot dataRoot)
-        // {
-        //     DataRoot = dataRoot;
-        // }
 
         public SystemBackupAddRequest(SystemBackupAddRequestData systemBackupAddRequestData)
         {

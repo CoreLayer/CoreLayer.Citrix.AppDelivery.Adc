@@ -45,7 +45,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroCommands
         {
 
             var task = NitroClient.SendAsync(
-                await NitroRequest.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
+                await NitroRequest.GetHttpRequestMessageAsync().ConfigureAwait(false),
                 cancellationToken);
             return await task.ConfigureAwait(false);
         }

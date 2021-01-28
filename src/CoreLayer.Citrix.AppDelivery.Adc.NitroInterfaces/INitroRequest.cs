@@ -15,6 +15,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces
         INitroRequestDataRoot DataRoot { get; }
 
         Task<ValidationResult> ValidateAsync();
-        Task<HttpRequestMessage> GenerateHttpRequestMessageAsync();
+        Task<HttpRequestMessage> GetHttpRequestMessageAsync();
     }
 }

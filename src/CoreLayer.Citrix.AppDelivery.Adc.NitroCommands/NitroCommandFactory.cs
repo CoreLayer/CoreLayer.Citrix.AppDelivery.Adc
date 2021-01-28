@@ -25,9 +25,9 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroCommands
             );
         }
 
-        public static T Create<T>(INitroClient nitroClient, INitroRequestData[] nitroRequestData)
+        public static T Create<T>(INitroClient nitroClient, INitroRequestData[] nitroRequestDatas)
         {
-            var nitroRequest = CreateNitroRequestInstance(typeof(T), nitroRequestData);
+            var nitroRequest = CreateNitroRequestInstance(typeof(T), nitroRequestDatas);
 
 
             return CreateCommandInstance(
