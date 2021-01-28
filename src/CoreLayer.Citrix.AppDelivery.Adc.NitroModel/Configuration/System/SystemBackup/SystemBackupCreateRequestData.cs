@@ -11,7 +11,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.Syste
 
         public SystemBackupCreateRequestData(SystemBackupLevel level)
         {
-            Level = level.ToString();
+            Level = level.ToString().ToLower();
         }
 
         public SystemBackupCreateRequestData(SystemBackupLevel level, string fileName) : this(level)

@@ -10,7 +10,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModelTests.Configuration.System
         {
             yield return new object[]
             {
-                new SystemBackupCreateRequestData("full"),
+                new SystemBackupCreateRequestData(SystemBackupLevel.Full),
                 new Dictionary<string, string>
                 {
                     // TODO Adapt to real values
@@ -23,26 +23,39 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModelTests.Configuration.System
             };
             yield return new object[]
             {
-                new SystemBackupCreateRequestData("full", "backup.tgz"),
+                new SystemBackupCreateRequestData(SystemBackupLevel.Basic, "backup.tgz"),
                 new Dictionary<string, string>
                 {
                     // TODO Adapt to real values
-                    {"ContentString", "{\"level\":\"full\",\"filename\":\"backup.tgz\",\"comment\":\"\"}"},
-                    {"Level", "full"},
-                    {"Filename", "backup.tgz"},
+                    {"ContentString", "{\"level\":\"basic\",\"filename\":\"backup\",\"comment\":\"\"}"},
+                    {"Level", "basic"},
+                    {"Filename", "backup"},
                     {"Comment", string.Empty}
 
                 }
             };
             yield return new object[]
             {
-                new SystemBackupCreateRequestData("full","backup.tgz", "comment"),
+                new SystemBackupCreateRequestData(SystemBackupLevel.Basic, "backup.bak"),
                 new Dictionary<string, string>
                 {
                     // TODO Adapt to real values
-                    {"ContentString", "{\"level\":\"full\",\"filename\":\"backup.tgz\",\"comment\":\"comment\"}"},
+                    {"ContentString", "{\"level\":\"basic\",\"filename\":\"backup.bak\",\"comment\":\"\"}"},
+                    {"Level", "basic"},
+                    {"Filename", "backup.bak"},
+                    {"Comment", string.Empty}
+
+                }
+            };
+            yield return new object[]
+            {
+                new SystemBackupCreateRequestData(SystemBackupLevel.Full,"backup.tgz", "comment"),
+                new Dictionary<string, string>
+                {
+                    // TODO Adapt to real values
+                    {"ContentString", "{\"level\":\"full\",\"filename\":\"backup\",\"comment\":\"comment\"}"},
                     {"Level", "full"},
-                    {"Filename", "backup.tgz"},
+                    {"Filename", "backup"},
                     {"Comment", "comment"}
 
                 }
