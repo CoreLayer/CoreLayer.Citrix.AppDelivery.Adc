@@ -1,6 +1,6 @@
 ﻿namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemBackup
 {
-    public class SystemBackupCreateRequestOptions : NitroRequestOptions
+    public class SystemBackupCreateRequestOptions : NitroDefaultRequestOptions
     {
         public override string Action { get; set; } = "create";
     }

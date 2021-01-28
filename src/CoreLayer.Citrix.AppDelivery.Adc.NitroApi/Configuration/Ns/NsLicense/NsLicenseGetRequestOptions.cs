@@ -1,4 +1,4 @@
 ﻿namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Ns.NsLicense
 {
-    public class NsLicenseGetRequestOptions : NitroRequestOptions { }
+    public class NsLicenseGetRequestOptions : NitroDefaultRequestOptions { }
 }

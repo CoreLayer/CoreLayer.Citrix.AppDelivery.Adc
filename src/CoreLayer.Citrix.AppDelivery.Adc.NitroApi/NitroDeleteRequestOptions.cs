@@ -23,13 +23,14 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 
         public override string ToString()
         {
-            string result = AddArgumentsToQuery();
+            var result = AddArgumentsToQuery();
             return result;
         }
 
         private string AddArgumentsToQuery()
         {
-            string returnString = "";
+            var returnString = "";
+
             if (!string.IsNullOrEmpty(ResourceName))
             {
                 returnString += "/" + ResourceName;

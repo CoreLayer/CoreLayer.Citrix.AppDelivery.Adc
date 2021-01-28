@@ -3,10 +3,17 @@ using System.Text.Encodings.Web;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
-    public class NitroRequestArgumentOptions : NitroRequestOptions
+    public class NitroArgumentRequestOptions : NitroRequestOptions
     {
         public Dictionary<string, string> Arguments { get; set; } = new Dictionary<string, string>();
 
+
+        public NitroArgumentRequestOptions() { }
+
+        public NitroArgumentRequestOptions(Dictionary<string, string> arguments)
+        {
+            Arguments = arguments;
+        }
 
         public override string ToString()
         {
@@ -15,7 +22,8 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 
         private string ArgumentsToString()
         {
-            string returnString = "";
+            var returnString = "";
+
             if (Arguments != null)
             {
                 if (Arguments.Count > 0)

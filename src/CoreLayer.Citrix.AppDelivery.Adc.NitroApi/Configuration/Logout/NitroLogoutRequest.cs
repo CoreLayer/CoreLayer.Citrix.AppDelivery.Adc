@@ -5,9 +5,9 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Logout
 {
     public class NitroLogoutRequest : NitroRequest
     {
-        public override HttpMethod Method => HttpMethod.Post;
-        public override string ResourcePath => "/nitro/v1/config/logout";
-        public override INitroRequestOptions Options => new NitroLogoutRequestOptions();
-        public override INitroRequestDataRoot DataRoot => new NitroLogoutRequestDataRoot();
+        public sealed override HttpMethod Method => HttpMethod.Post;
+        public sealed override string ResourcePath => "/nitro/v1/config/logout";
+        public sealed override INitroRequestOptions Options => new NitroLogoutRequestOptions();
+        public sealed override INitroRequestDataRoot DataRoot => new NitroLogoutRequestDataRoot();
     }
 }

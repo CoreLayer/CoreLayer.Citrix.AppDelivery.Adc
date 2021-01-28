@@ -5,12 +5,17 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemB
 {
     public class SystemBackupDeleteRequest : NitroRequest
     {
-        public override HttpMethod Method => HttpMethod.Delete;
-        public override string ResourcePath => "/nitro/v1/config/systembackup";
-        public override INitroRequestOptions Options { get; set; } = new SystemBackupDeleteRequestOptions(null);
-        public override INitroRequestDataRoot DataRoot => new SystemBackupDeleteRequestDataRoot();
+        public sealed override HttpMethod Method => HttpMethod.Delete;
+        public sealed override string ResourcePath => "/nitro/v1/config/systembackup";
+        public sealed override INitroRequestOptions Options { get; set; } = new SystemBackupDeleteRequestOptions(null);
+        public sealed override INitroRequestDataRoot DataRoot => new SystemBackupDeleteRequestDataRoot();
 
 
         public SystemBackupDeleteRequest() { }
+
+        public SystemBackupDeleteRequest(string resourceName)
+        {
+            Options = new SystemBackupDeleteRequestOptions(resourceName);
+        }
     }
 }

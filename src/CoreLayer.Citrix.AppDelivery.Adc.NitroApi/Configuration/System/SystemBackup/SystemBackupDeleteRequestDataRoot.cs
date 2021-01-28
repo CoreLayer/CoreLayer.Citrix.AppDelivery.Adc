@@ -2,5 +2,5 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemBackup
 {
-    public class SystemBackupDeleteRequestDataRoot : INitroRequestDataRoot { }
+    internal class SystemBackupDeleteRequestDataRoot : INitroRequestDataRoot { }
 }

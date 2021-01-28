@@ -1,4 +1,4 @@
 ﻿namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemFile
 {
-    public class SystemFileAddRequestOptions : NitroRequestOptions { }
+    public class SystemFileAddRequestOptions : NitroDefaultRequestOptions { }
 }
