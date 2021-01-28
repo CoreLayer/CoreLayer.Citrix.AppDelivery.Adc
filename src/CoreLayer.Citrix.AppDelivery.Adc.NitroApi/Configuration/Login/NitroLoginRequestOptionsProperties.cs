@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// TODO NitroLoginRequestOptionsProperties
-    /// TODO NitroLoginRequestOptionsProperties still necessasry? FluentValidation?
+    /// TODO NitroLoginRequestOptionsProperties still necessary? FluentValidation?
     /// </summary>
     public enum NitroLoginRequestOptionsProperties { }
 }

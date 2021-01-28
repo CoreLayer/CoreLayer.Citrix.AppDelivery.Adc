@@ -9,6 +9,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces
         Task Login(CancellationToken cancellationToken);
         Task Logout(CancellationToken cancellationToken);
 
-        Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken);
+        Task<HttpResponseMessage> SendAsync(HttpRequestMessage httpRequestMessage, CancellationToken cancellationToken);
     }
 }

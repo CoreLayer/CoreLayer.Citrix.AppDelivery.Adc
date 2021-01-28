@@ -9,17 +9,17 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.Syste
         public string Comment { get; set; } = string.Empty;
 
 
-        public SystemBackupCreateRequestData(string level)
+        public SystemBackupCreateRequestData(SystemBackupLevel level)
         {
-            Level = level;
+            Level = level.ToString();
         }
 
-        public SystemBackupCreateRequestData(string level, string filename) : this(level)
+        public SystemBackupCreateRequestData(SystemBackupLevel level, string fileName) : this(level)
         {
-            Filename = filename;
+            Filename = fileName.Replace(".tgz", "");
         }
 
-        public SystemBackupCreateRequestData(string level, string filename, string comment) : this(level, filename)
+        public SystemBackupCreateRequestData(SystemBackupLevel level, string fileName, string comment) : this(level, fileName)
         {
             Comment = comment;
         }

@@ -15,41 +15,32 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
     {
         private const string NitroTokenCookie = "NITRO_AUTH_TOKEN=";
         private readonly HttpClient _httpClient;
-        private readonly NitroClientSettings _nitroSettings;
+        private readonly NitroClientSettings _nitroClientSettings;
 
-
-
-
-        public NitroClient(NitroClientSettings settings, HttpClient httpClient)
+        
+        public NitroClient(NitroClientSettings nitroClientSettings, HttpClient httpClient)
         {
-            _nitroSettings = settings;
+            _nitroClientSettings = nitroClientSettings;
             _httpClient = httpClient;
 
             ConfigureHttpClient();
         }
-
-
-
-
-        public NitroClient(NitroClientSettings settings) : this(settings, NitroClientFactory.Generate(settings.ValidateCertificate)) { }
-
-
-
+        
+        public NitroClient(NitroClientSettings nitroClientSettings) : 
+            this(nitroClientSettings, NitroClientFactory.Generate(nitroClientSettings.ValidateCertificate)) { }
+        
         private void ConfigureHttpClient()
         {
-            _httpClient.BaseAddress = _nitroSettings.BaseAddress;
-            _httpClient.Timeout = TimeSpan.FromSeconds(_nitroSettings.Timeout);
+            _httpClient.BaseAddress = _nitroClientSettings.BaseAddress;
+            _httpClient.Timeout = TimeSpan.FromSeconds(_nitroClientSettings.Timeout);
 
             var task = ConfigureAutomaticLogin();
             task.Wait();
         }
-
-
-
-
+        
         private async Task ConfigureAutomaticLogin()
         {
-            switch (_nitroSettings.AuthenticationMethod)
+            switch (_nitroClientSettings.AuthenticationMethod)
             {
                 case NitroClientAuthenticationMethod.HeaderInjection:
                     ConfigureAuthenticationHeaders();
@@ -61,33 +52,24 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
                     break;
             }
         }
-
-
-
-
+        
         private void ConfigureAuthenticationHeaders()
         {
-            _httpClient.DefaultRequestHeaders.Add("X-NITRO-USER", _nitroSettings.Username);
-            _httpClient.DefaultRequestHeaders.Add("X-NITRO-PASS", _nitroSettings.Password);
+            _httpClient.DefaultRequestHeaders.Add("X-NITRO-USER", _nitroClientSettings.Username);
+            _httpClient.DefaultRequestHeaders.Add("X-NITRO-PASS", _nitroClientSettings.Password);
         }
-
-
-
-
+        
         private void ConfigureAuthenticationCookieHeader(string token)
         {
             _httpClient.DefaultRequestHeaders.Add("Cookie", NitroTokenCookie + token);
         }
-
-
-
-
+        
         private bool IsLoggedIn()
         {
             while (true)
             {
                 // Headers are automatically injected into the HttpClient for each request
-                if (_nitroSettings.AuthenticationMethod == NitroClientAuthenticationMethod.HeaderInjection)
+                if (_nitroClientSettings.AuthenticationMethod == NitroClientAuthenticationMethod.HeaderInjection)
                     return true;
 
                 // Login has been executed (either manually or automatically)
@@ -97,22 +79,18 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
 
                 // Login has not been executed
                 // Cookie header is not yet injected into the HttpClient
-                if (_nitroSettings.AuthenticationMethod == NitroClientAuthenticationMethod.Manual)
+                if (_nitroClientSettings.AuthenticationMethod == NitroClientAuthenticationMethod.Manual)
                     return false;
             }
         }
 
-
-
-
         public async Task Login(CancellationToken cancellationToken)
         {
-            var loginRequestData = new NitroLoginRequestData(_nitroSettings.Username, _nitroSettings.Password, _nitroSettings.Timeout);
-            //var loginRequestConfiguration = new NitroLoginRequest(new NitroLoginRequestDataRoot(loginRequestData));
-            var loginRequestConfiguration = new NitroLoginRequest(loginRequestData);
+            var loginRequestData = new NitroLoginRequestData(_nitroClientSettings.Username, _nitroClientSettings.Password, _nitroClientSettings.Timeout);
+            var loginRequest = new NitroLoginRequest(loginRequestData);
 
             var response = await _httpClient.SendAsync(
-                await loginRequestConfiguration.GenerateHttpRequestMessageAsync().ConfigureAwait(false),
+                await loginRequest.GetHttpRequestMessageAsync().ConfigureAwait(false),
                 cancellationToken).ConfigureAwait(false);
 
             if (!response.IsSuccessStatusCode)
@@ -125,23 +103,23 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
                     NitroSerializerOptions.JsonSerializerOptions,
                     cancellationToken
                 ).ConfigureAwait(false);
-            
+
+            if (content == null)
+                throw new NullReferenceException("Could not extract SessionId.\n" + response);
+
             ConfigureAuthenticationCookieHeader(content.SessionId);
         }
-
-
-
-
+        
         public async Task Logout(CancellationToken cancellationToken)
         {
             if (!IsLoggedIn())
                 return;
 
-            var logoutRequestConfiguration = new NitroLogoutRequest();
+            var logoutRequest = new NitroLogoutRequest();
             var response = await _httpClient
                 .SendAsync(
-                    await logoutRequestConfiguration
-                        .GenerateHttpRequestMessageAsync()
+                    await logoutRequest
+                        .GetHttpRequestMessageAsync()
                         .ConfigureAwait(false), 
                     cancellationToken)
                 .ConfigureAwait(false);
@@ -153,9 +131,9 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient
 
 
 
-        public async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        public async Task<HttpResponseMessage> SendAsync(HttpRequestMessage httpRequestMessage, CancellationToken cancellationToken)
         {
-            var task = _httpClient.SendAsync(request, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
+            var task = _httpClient.SendAsync(httpRequestMessage, HttpCompletionOption.ResponseHeadersRead, cancellationToken);
 
             return await task.ConfigureAwait(false);
         }

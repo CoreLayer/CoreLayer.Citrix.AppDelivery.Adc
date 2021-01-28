@@ -5,18 +5,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemF
 {
     public class SystemFileAddRequestDataRoot : INitroRequestDataRoot
     {
-        // public dynamic[] SystemFile { get; set; }
         public SystemFileAddRequestData[] SystemFile { get; set; }
-
-        // public SystemFileAddRequestDataRoot(dynamic data)
-        // {
-        //     SystemFile = new dynamic[] { data };
-        // }
-        //
-        // public SystemFileAddRequestDataRoot(dynamic[] data)
-        // {
-        //     SystemFile = data;
-        // }
 
 
         public SystemFileAddRequestDataRoot(SystemFileAddRequestData systemFileAddRequestData)
@@ -28,7 +17,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemF
         {
             SystemFile = systemFileAddRequestDatas;
         }
-
 
         public override string ToString()
         {
@@ -42,4 +30,3 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemF
         }
     }
 }
-/// TODO CLEANUP

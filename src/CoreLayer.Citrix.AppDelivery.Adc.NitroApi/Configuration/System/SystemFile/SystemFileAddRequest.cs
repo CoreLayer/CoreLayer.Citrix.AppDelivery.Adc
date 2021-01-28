@@ -11,10 +11,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemF
         public override INitroRequestOptions Options => new SystemFileAddRequestOptions();
         public override INitroRequestDataRoot DataRoot { get; }
 
-        // public SystemFileAddRequest(SystemFileAddRequestDataRoot dataRoot)
-        // {
-        //     DataRoot = dataRoot;
-        // }
 
         public SystemFileAddRequest(SystemFileAddRequestData systemFileAddRequestData)
         {
@@ -27,4 +23,3 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemF
         }
     }
 }
-/// TODO CLEANUP

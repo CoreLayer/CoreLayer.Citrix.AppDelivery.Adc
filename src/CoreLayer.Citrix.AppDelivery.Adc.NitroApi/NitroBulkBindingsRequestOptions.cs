@@ -4,7 +4,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
     public class NitroBulkBindingsRequestOptions : NitroRequestOptions
     {
-        protected override List<string> GenerateQueryParameterList()
+        protected override List<string> GetQueryParameterList()
         {
             List<string> queryParameters = new List<string>();
 
