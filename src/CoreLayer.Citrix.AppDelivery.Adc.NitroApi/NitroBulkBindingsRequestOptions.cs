@@ -6,7 +6,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
     {
         protected override List<string> GetQueryParameterList()
         {
-            List<string> queryParameters = new List<string>();
+            var queryParameters = new List<string>();
 
             if (ResourceName == string.Empty)
             {

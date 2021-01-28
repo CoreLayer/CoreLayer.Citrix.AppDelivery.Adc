@@ -20,7 +20,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemB
 
         public override string ToString()
         {
-            string result = "";
+            var result = "";
 
             foreach (var dataItem in SystemBackup)
             {

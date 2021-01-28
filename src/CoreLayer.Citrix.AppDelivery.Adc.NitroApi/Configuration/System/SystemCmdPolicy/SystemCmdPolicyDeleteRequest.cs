@@ -5,10 +5,10 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemC
 {
     public class SystemCmdPolicyDeleteRequest : NitroRequest
     {
-        public override HttpMethod Method => HttpMethod.Delete;
-        public override string ResourcePath => "/nitro/v1/config/systemcmdpolicy";
-        public override INitroRequestOptions Options { get; set; } = new SystemCmdPolicyDeleteRequestOptions();
-        public override INitroRequestDataRoot DataRoot => new SystemCmdPolicyDeleteRequestDataRoot();
+        public sealed override HttpMethod Method => HttpMethod.Delete;
+        public sealed override string ResourcePath => "/nitro/v1/config/systemcmdpolicy";
+        public sealed override INitroRequestOptions Options { get; set; } = new SystemCmdPolicyDeleteRequestOptions();
+        public sealed override INitroRequestDataRoot DataRoot => new SystemCmdPolicyDeleteRequestDataRoot();
 
 
         public SystemCmdPolicyDeleteRequest() { }

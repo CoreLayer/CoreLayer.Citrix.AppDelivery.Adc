@@ -1,5 +1,4 @@
 ﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
-using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -31,7 +30,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 
         protected virtual List<string> GetQueryParameterList()
         {
-            List<string> queryParameters = new List<string>();
+            var queryParameters = new List<string>();
 
             if (!Action.Equals(string.Empty))
                 queryParameters.Add("action=" + Action);
@@ -52,7 +51,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 
         private string AddResourceNameToRequestPath()
         {
-            if (!ResourceName.Equals(String.Empty))
+            if (!ResourceName.Equals(string.Empty))
             {
                 return "/" + UrlEncoder.Default.Encode(ResourceName);
             }

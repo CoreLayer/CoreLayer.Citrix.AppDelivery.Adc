@@ -4,17 +4,17 @@ using System.Net.Http;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemCmdPolicy
 {
-    public class SystemCmdPolicyAddRequest : NitroRequest
+    public class SystemCmdPolicyUpdateRequest : NitroRequest
     {
-        public sealed override HttpMethod Method => HttpMethod.Post;
+        public sealed override HttpMethod Method => HttpMethod.Put;
         public sealed override string ResourcePath => "/nitro/v1/config/systemcmdpolicy";
-        public sealed override INitroRequestOptions Options => new SystemCmdPolicyAddRequestOptions();
+        public sealed override INitroRequestOptions Options => new SystemCmdPolicyUpdateRequestOptions();
         public sealed override INitroRequestDataRoot DataRoot { get; }
 
 
-        public SystemCmdPolicyAddRequest(SystemCmdPolicyAddRequestData systemCmdPolicyAddRequestData)
+        public SystemCmdPolicyUpdateRequest(SystemCmdPolicyUpdateRequestData SystemCmdPolicyUpdateRequestData)
         {
-            DataRoot = new SystemCmdPolicyAddRequestDataRoot(systemCmdPolicyAddRequestData);
+            DataRoot = new SystemCmdPolicyUpdateRequestDataRoot(SystemCmdPolicyUpdateRequestData);
         }
     }
 }

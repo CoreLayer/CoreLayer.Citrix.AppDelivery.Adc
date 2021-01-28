@@ -1,6 +1,5 @@
 ﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
 using System;
-using System.Linq;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroCommands
 {

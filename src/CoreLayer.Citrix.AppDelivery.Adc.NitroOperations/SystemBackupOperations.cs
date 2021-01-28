@@ -20,9 +20,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroOperations
         public const string SystemBackupCreateAndDeleteCmdPolicySpecification = "(^(create|rm)\\s+system\\s+backup\\s+.*)";
         public const string SystemBackupDownloadCmdPolicySpecification = "(^show\\ssystem\\sfile\\s[\\w\\.-]+\\s-fileLocation\\s\"/var/ns_sys_backup\")";
         public const string SystemBackupOperationsCmdPolicySpecification =
-            SystemBackupGetCmdPolicySpecification + "|" +
-            SystemBackupCreateAndDeleteCmdPolicySpecification + "|" +
-            SystemBackupDownloadCmdPolicySpecification;
+            SystemBackupGetCmdPolicySpecification + "|" + SystemBackupCreateAndDeleteCmdPolicySpecification + "|" + SystemBackupDownloadCmdPolicySpecification;
 
 
         public static async Task<SystemCmdPolicyAddResponse> CreateSystemCmdPolicyAsync(INitroClient nitroClient, string systemCmdPolicyName)

@@ -21,6 +21,7 @@
 
         public int Timeout { get; }
 
+        // TODO necessary?
         public override string ToString()
         {
             return "{\"username\":\"" + Username + "\",\"password\":\"" + Password + "\",\"timeout\":\"" + Timeout + "\"}";

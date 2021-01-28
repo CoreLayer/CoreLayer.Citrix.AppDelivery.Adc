@@ -6,10 +6,10 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemB
 {
     public class SystemBackupAddRequest : NitroRequest
     {
-        public override HttpMethod Method => HttpMethod.Post;
-        public override string ResourcePath => "/nitro/v1/config/systembackup";
-        public override INitroRequestOptions Options => new SystemBackupAddRequestOptions();
-        public override INitroRequestDataRoot DataRoot { get; }
+        public sealed override HttpMethod Method => HttpMethod.Post;
+        public sealed override string ResourcePath => "/nitro/v1/config/systembackup";
+        public sealed override INitroRequestOptions Options => new SystemBackupAddRequestOptions();
+        public sealed override INitroRequestDataRoot DataRoot { get; }
 
 
         public SystemBackupAddRequest(SystemBackupAddRequestData systemBackupAddRequestData)

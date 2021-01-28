@@ -5,10 +5,10 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemC
 {
     public class SystemCmdPolicyGetRequest : NitroRequest
     {
-        public override HttpMethod Method => HttpMethod.Get;
-        public override string ResourcePath => "/nitro/v1/config/systemcmdpolicy";
-        public override INitroRequestOptions Options { get; set; } = new SystemCmdPolicyGetRequestOptions();
-        public override INitroRequestDataRoot DataRoot => new SystemCmdPolicyGetRequestDataRoot();
+        public sealed override HttpMethod Method => HttpMethod.Get;
+        public sealed override string ResourcePath => "/nitro/v1/config/systemcmdpolicy";
+        public sealed override INitroRequestOptions Options { get; set; } = new SystemCmdPolicyGetRequestOptions();
+        public sealed override INitroRequestDataRoot DataRoot => new SystemCmdPolicyGetRequestDataRoot();
 
 
         public SystemCmdPolicyGetRequest() { }

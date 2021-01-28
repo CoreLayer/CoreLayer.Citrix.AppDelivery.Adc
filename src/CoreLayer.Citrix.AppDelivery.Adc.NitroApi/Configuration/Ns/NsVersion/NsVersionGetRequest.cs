@@ -5,9 +5,9 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Ns.NsVersion
 {
     public class NsVersionGetRequest : NitroRequest
     {
-        public override HttpMethod Method => HttpMethod.Get;
-        public override string ResourcePath => "/nitro/v1/config/nsversion";
-        public override INitroRequestDataRoot DataRoot => new NsVersionGetRequestDataRoot();
-        public override INitroRequestOptions Options { get; set; } = new NsLicenseGetRequestOptions();
+        public sealed override HttpMethod Method => HttpMethod.Get;
+        public sealed override string ResourcePath => "/nitro/v1/config/nsversion";
+        public sealed override INitroRequestDataRoot DataRoot => new NsVersionGetRequestDataRoot();
+        public sealed override INitroRequestOptions Options { get; set; } = new NsLicenseGetRequestOptions();
     }
 }

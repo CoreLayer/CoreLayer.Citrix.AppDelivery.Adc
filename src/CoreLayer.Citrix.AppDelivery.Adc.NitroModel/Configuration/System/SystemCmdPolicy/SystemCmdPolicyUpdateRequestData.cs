@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemCmdPolicy
 {
-    public class SystemCmdPolicyAddRequestData : INitroRequestData
+    public class SystemCmdPolicyUpdateRequestData : INitroRequestData
     {
         public string PolicyName { get; set; }
         public string Action { get; }
@@ -12,7 +12,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.Syste
         public string CommandSpecification { get; set; }
 
 
-        public SystemCmdPolicyAddRequestData(string policyName, SystemCmdPolicyAction systemCmdPolicyAction, string commandSpecification)
+        public SystemCmdPolicyUpdateRequestData(string policyName, SystemCmdPolicyAction systemCmdPolicyAction, string commandSpecification)
         {
             PolicyName = policyName;
             Action = systemCmdPolicyAction.ToString();

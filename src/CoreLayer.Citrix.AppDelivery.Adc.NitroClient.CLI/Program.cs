@@ -1,13 +1,12 @@
 ﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsLicense;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsVersion;
-using System;
-using System.Threading;
-using CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemCmdPolicy;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.System.SystemCmdPolicy;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemBackup;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemCmdPolicy;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroOperations;
+using System;
+using System.Threading;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
 {
@@ -62,6 +61,11 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
             var systemBackupDownload = await SystemBackupOperations.DownloadAsBase64Async(nitroClient, "test.tgz");
             Console.WriteLine(systemBackupDownload.FileSize);
             await SystemBackupOperations.DeleteAsync(nitroClient, "test.tgz");
+            var systemCmdPolicyUpdateCommand = NitroCommandFactory.Create<SystemCmdPolicyUpdateCommand>(nitroClient,
+                new SystemCmdPolicyUpdateRequestData("CMD_TEST", SystemCmdPolicyAction.Deny, "show*"));
+            var systemCmdPolicyUpdateResponse = systemCmdPolicyUpdateCommand.GetResponse();
+            Console.WriteLine("Check command");
+            Console.ReadLine();
             await SystemBackupOperations.DeleteSystemCmdPolicyAsync(nitroClient, "CMD_TEST");
 
             await nitroClient.Logout(new CancellationToken());

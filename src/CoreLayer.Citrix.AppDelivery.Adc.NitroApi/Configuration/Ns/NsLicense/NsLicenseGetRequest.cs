@@ -5,9 +5,9 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Ns.NsLicense
 {
     public class NsLicenseGetRequest : NitroRequest
     {
-        public override HttpMethod Method => HttpMethod.Get;
-        public override string ResourcePath => "/nitro/v1/config/nslicense";
-        public override INitroRequestDataRoot DataRoot => new NsLicenseGetRequestDataRoot();
-        public override INitroRequestOptions Options { get; set; } = new NsLicenseGetRequestOptions();
+        public sealed override HttpMethod Method => HttpMethod.Get;
+        public sealed override string ResourcePath => "/nitro/v1/config/nslicense";
+        public sealed override INitroRequestDataRoot DataRoot => new NsLicenseGetRequestDataRoot();
+        public sealed override INitroRequestOptions Options { get; set; } = new NsLicenseGetRequestOptions();
     }
 }

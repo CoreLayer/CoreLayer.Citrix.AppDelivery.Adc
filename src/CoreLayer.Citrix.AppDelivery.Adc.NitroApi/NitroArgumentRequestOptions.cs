@@ -22,7 +22,8 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 
         private string ArgumentsToString()
         {
-            string returnString = "";
+            var returnString = "";
+
             if (Arguments != null)
             {
                 if (Arguments.Count > 0)

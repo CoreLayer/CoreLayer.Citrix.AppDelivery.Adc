@@ -6,10 +6,10 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.Login
 {
     public class NitroLoginRequest : NitroRequest
     {
-        public override HttpMethod Method => HttpMethod.Post;
-        public override string ResourcePath => "/nitro/v1/config/login";
-        public override INitroRequestOptions Options => new NitroLoginRequestOptions();
-        public override INitroRequestDataRoot DataRoot { get; }
+        public sealed override HttpMethod Method => HttpMethod.Post;
+        public sealed override string ResourcePath => "/nitro/v1/config/login";
+        public sealed override INitroRequestOptions Options => new NitroLoginRequestOptions();
+        public sealed override INitroRequestDataRoot DataRoot { get; }
         
 
         public NitroLoginRequest(NitroLoginRequestData nitroLoginRequestData)
