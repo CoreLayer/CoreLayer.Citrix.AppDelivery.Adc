@@ -3,7 +3,7 @@ using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemFil
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemFile
 {
-    public class SystemFileAddRequestDataRoot : INitroRequestDataRoot
+    internal class SystemFileAddRequestDataRoot : INitroRequestDataRoot
     {
         public SystemFileAddRequestData[] SystemFile { get; set; }
 

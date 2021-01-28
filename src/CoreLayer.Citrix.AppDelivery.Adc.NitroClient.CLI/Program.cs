@@ -3,7 +3,10 @@ using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsLicense;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.Ns.NsVersion;
 using System;
 using System.Threading;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemCmdPolicy;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.System.SystemCmdPolicy;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemBackup;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemCmdPolicy;
 using CoreLayer.Citrix.AppDelivery.Adc.NitroOperations;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
@@ -54,11 +57,12 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
 
             Console.WriteLine();
 
+            await SystemBackupOperations.CreateSystemCmdPolicyAsync(nitroClient, "CMD_TEST");
             await SystemBackupOperations.CreateAsync(nitroClient, SystemBackupLevel.Full, "test.tgz");
             var systemBackupDownload = await SystemBackupOperations.DownloadAsBase64Async(nitroClient, "test.tgz");
             Console.WriteLine(systemBackupDownload.FileSize);
             await SystemBackupOperations.DeleteAsync(nitroClient, "test.tgz");
-
+            await SystemBackupOperations.DeleteSystemCmdPolicyAsync(nitroClient, "CMD_TEST");
 
             await nitroClient.Logout(new CancellationToken());
             Console.ReadLine();

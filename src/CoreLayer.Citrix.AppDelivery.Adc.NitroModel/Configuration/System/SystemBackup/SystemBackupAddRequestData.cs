@@ -1,6 +1,8 @@
-﻿namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemBackup
+﻿using CoreLayer.Citrix.AppDelivery.Adc.NitroInterfaces;
+
+namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemBackup
 {
-    public class SystemBackupAddRequestData
+    public class SystemBackupAddRequestData : INitroRequestData
     {
         public string FileName { get; }
 

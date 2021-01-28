@@ -12,5 +12,10 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemB
 
 
         public SystemBackupDeleteRequest() { }
+
+        public SystemBackupDeleteRequest(string resourceName)
+        {
+            Options = new SystemBackupDeleteRequestOptions(resourceName);
+        }
     }
 }

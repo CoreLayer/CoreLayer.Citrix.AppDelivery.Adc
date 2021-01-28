@@ -5,8 +5,8 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.Syste
     public class SystemBackupCreateRequestData : INitroRequestData
     {
         public string Level { get; }
-        public string Filename { get; set; } = string.Empty;
-        public string Comment { get; set; } = string.Empty;
+        public string Filename { get; } = string.Empty;
+        public string Comment { get; } = string.Empty;
 
 
         public SystemBackupCreateRequestData(SystemBackupLevel level)

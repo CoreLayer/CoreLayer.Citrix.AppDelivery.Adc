@@ -12,5 +12,10 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemB
 
 
         public SystemBackupGetRequest() { }
+
+        public SystemBackupGetRequest(string resourceName)
+        {
+            Options = new SystemBackupGetRequestOptions(resourceName);
+        }
     }
 }
