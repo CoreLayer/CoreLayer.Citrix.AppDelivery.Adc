@@ -2,6 +2,6 @@
 {
     public class SystemBackupCreateRequestOptions : NitroDefaultRequestOptions
     {
-        public override string Action { get; set; } = "create";
+        public override string Action { get; } = "create";
     }
 }

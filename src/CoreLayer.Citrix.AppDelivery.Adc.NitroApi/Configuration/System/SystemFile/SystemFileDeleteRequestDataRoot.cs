@@ -2,5 +2,5 @@
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemFile
 {
-    internal class SystemFileRemoveRequestDataRoot : INitroRequestDataRoot { }
+    internal class SystemFileDeleteRequestDataRoot : INitroRequestDataRoot { }
 }
