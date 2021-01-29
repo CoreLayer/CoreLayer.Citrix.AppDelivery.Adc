@@ -10,7 +10,7 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
         public virtual string ResourceName { get; set; } = "";
         public virtual Dictionary<string, string> ResourceFilter { get; set; } = new Dictionary<string, string>();
         public virtual List<string> PropertyFilter { get; set; } = new List<string>();
-        public virtual string Action { get; set; } = string.Empty; // TODO - implement action query parameter
+        public virtual string Action { get; } = string.Empty; // TODO - implement action query parameter
         public virtual bool Count { get; set; } = false;
 
 

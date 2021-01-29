@@ -5,11 +5,11 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi
 {
     public class NitroDeleteRequestOptions : NitroRequestOptions
     {
-        public new string ResourceName { get; }
-        public new Dictionary<string, string> ResourceFilter { get; }
-        public new List<string> PropertyFilter { get; }
-        public new string Action { get; }
-        public new bool Count { get; }
+        public override string ResourceName { get; set; }
+        public override Dictionary<string, string> ResourceFilter { get; set; }
+        public override List<string> PropertyFilter { get; set; }
+        public override string Action { get; }
+        public override bool Count { get; set; }
         public Dictionary<string, string> Arguments { get; set; }
 
 

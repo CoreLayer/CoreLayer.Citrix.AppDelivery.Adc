@@ -7,6 +7,13 @@ using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemCmd
 using CoreLayer.Citrix.AppDelivery.Adc.NitroOperations;
 using System;
 using System.Threading;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemUser;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemUserSystemCmdPolicyBinding;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.System.SystemUser;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroCommands.Configuration.System.SystemUserSystemCmdPolicyBinding;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemUser;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroModel.Configuration.System.SystemUserSystemCmdPolicyBinding;
+using CoreLayer.Citrix.AppDelivery.Adc.NitroOperations.SystemUser;
 
 namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
 {
@@ -55,21 +62,6 @@ namespace CoreLayer.Citrix.AppDelivery.Adc.NitroClient.CLI
             Console.WriteLine(nsVersionGetResponse.NsVersionResponse.Version);
 
             Console.WriteLine();
-
-            await SystemBackupOperations.CreateSystemCmdPolicyAsync(nitroClient, "CMD_TEST");
-            await SystemBackupOperations.CreateAsync(nitroClient, SystemBackupLevel.Full, "test.tgz");
-            var systemBackupDownload = await SystemBackupOperations.DownloadAsBase64Async(nitroClient, "test.tgz");
-            Console.WriteLine(systemBackupDownload.FileSize);
-            await SystemBackupOperations.DeleteAsync(nitroClient, "test.tgz");
-            var systemCmdPolicyUpdateCommand = NitroCommandFactory.Create<SystemCmdPolicyUpdateCommand>(nitroClient,
-                new SystemCmdPolicyUpdateRequestData("CMD_TEST", SystemCmdPolicyAction.Deny, "show*"));
-            var systemCmdPolicyUpdateResponse = systemCmdPolicyUpdateCommand.GetResponse();
-            Console.WriteLine("Check command");
-            Console.ReadLine();
-            await SystemBackupOperations.DeleteSystemCmdPolicyAsync(nitroClient, "CMD_TEST");
-
-            await nitroClient.Logout(new CancellationToken());
-            Console.ReadLine();
         }
     }
 }

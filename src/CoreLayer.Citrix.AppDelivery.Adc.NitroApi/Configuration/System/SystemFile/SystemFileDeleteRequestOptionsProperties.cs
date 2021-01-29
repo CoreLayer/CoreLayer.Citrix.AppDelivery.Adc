@@ -1,4 +1,4 @@
 ﻿namespace CoreLayer.Citrix.AppDelivery.Adc.NitroApi.Configuration.System.SystemFile
 {
-    public class SystemFileRemoveResponse : NitroResponse { }
+    public enum SystemFileDeleteRequestOptionsProperties { }
 }
